@@ -1,2 +1,113 @@
-.results_summary
-    width: fit-content
+@use "../abstracts/_fonts"
+@use "../abstracts/_colors"
+
+.card
+    width: auto
+    display: flex
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-family: 'Hanken Grotesk', sans-serif
+    box-shadow: 10px 15px 15px colors.$pale-blue
+    border-radius: 15px
+
+    &__results
+        width: 250px
+        height: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        background-image: linear-gradient(colors.$light-slate-blue, colors.$light-royal-blue)
+        gap: 20px
+        justify-content: space-between
+        padding: 35px
+        border-radius: 15px
+
+        &__title
+            font-size: .8rem
+            color: colors.$light-lavender
+
+        &__score
+            width: 120px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            border-radius: 50%
+            aspect-ratio: 1 / 1
+            background-image: linear-gradient(colors.$violet-blue, colors.$persian-blue)
+
+            h1
+                color: colors.$white
+                font-size: 2.5rem
+                font-weight: fonts.$extraBold
+            span
+                color: colors.$light-lavender
+                font-size: .6rem
+
+        &__grade
+            color: colors.$white
+            font-size: 1.1rem
+            font-weight: fonts.$bold
+
+        &__text
+            font-size: .7rem
+            color: colors.$light-lavender
+            text-align: center
+            font-weight: fonts.$medium
+
+    &__summary
+        width: auto
+        display: flex
+        flex-direction: column
+        padding: 20px
+        gap: 10px
+
+        h3
+            margin-bottom: 10px
+
+        &__stat
+            min-width: 220px
+            display: flex
+            justify-content: space-between
+            border-radius: 5px
+            padding: 10px
+            gap: 10px
+
+            &:first-of-type
+                background-color: colors.$light-red-a
+
+                .card__summary__stat__title
+                    color: colors.$light-red
+            &:nth-of-type(2)
+                background-color: colors.$orangey-yellow-a
+
+                .card__summary__stat__title
+                    color: colors.$orangey-yellow
+            &:nth-of-type(3)
+                background-color: colors.$green-teal-a
+
+                .card__summary__stat__title
+                    color: colors.$green-teal
+            &:nth-of-type(4)
+                background-color: colors.$cobalt-blue-a
+
+                .card__summary__stat__title
+                    color: colors.$cobalt-blue
+
+            &__title
+                align-self: center
+                font-size: .8rem
+                font-weight: fonts.$bold
+
+            &__score
+                margin-left: auto
+                font-size: .8rem
+
+                &__points
+                    font-size: .8rem
+                    font-weight: fonts.$bold
+
+        .btn
+            margin-top: 20px
