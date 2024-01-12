@@ -5,7 +5,7 @@ export default function ResultsSummary() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch("/data.json")
+        fetch("./data.json")
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
